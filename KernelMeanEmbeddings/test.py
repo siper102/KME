@@ -18,15 +18,19 @@ Nx_3 = 0.3 * np.random.normal(size = 500)
 Xp_diff = Zp_3 + Nx_3
 
 plt.scatter(Z_1, X)
-plt.scatter(Zp_2, Xp_same)
-plt.scatter(Zp_3, Xp_diff)
-plt.show()
+plt.scatter(Zp_2, Xp_same, c = "r", marker="+", )
+plt.scatter(Zp_3, Xp_diff, c = "k", marker = "*")
+plt.legend(["X", "X_same", "X_diff"])
+plt.xlabel("Z")
+plt.xlabel("X")
+plt.savefig("scatter.jpg")
+#plt.show()
 
 mcmd_1 = MCMD(X, Xp_same, Z_1, Zp_2, kernel_x_args= dict(sigma = 0.1), kernel_y_args=dict(sigma = 0.1), lamb=0.01, lambp=0.01)
 mcmd_2 = MCMD(X, Xp_diff, Z_1, Zp_3, kernel_x_args= dict(sigma = 0.1), kernel_y_args=dict(sigma = 0.1), lamb=0.01, lambp=0.01)
 
 
-xp = np.linspace(-3, 3, 10000)
+xp = np.linspace(-3, 3, 1000)
 ysame = np.zeros_like(xp)
 ydiff = np.zeros_like(xp)
 for i in range(len(xp)):
@@ -36,4 +40,7 @@ for i in range(len(xp)):
 plt.plot(xp, ysame)
 plt.plot(xp, ydiff)
 plt.ylim((0, 1))
-plt.show()
+plt.legend(["$\widehat{MCMD}^{2}(P^{X|Z},P^{X_same|Z}, H_{\mathcal{X}})$",
+           "$\widehat{MCMD}^{2}(P^{X|Z}, P^{X_diff|Z}, H_{\mathcal{X}})$"])
+#plt.show()
+plt.savefig("verbose2.jpg")
