@@ -7,3 +7,4 @@ def kernel_schetzer(x, kernel = "gaussian", kernel_args = dict()):
     k_x = kernel_vec(x, kernel)
     return lambda y: np.mean(k_x(y))
 
+
