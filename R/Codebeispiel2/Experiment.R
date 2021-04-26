@@ -10,7 +10,7 @@ h <- function(k, z1, z2){
 }
 
 MMD <- function(k, z){
-  n <- length(x)
+  n <- nrow(z)
   summe <- 0
   for(i in 1:n){
     for(j in (1:n)[-i]){
@@ -24,9 +24,15 @@ MMD <- function(k, z){
 m <- 1000
 n <- 100
 
-vers1 <- replicate(m, sqrt(n) * MMD(gauss.kernel, matrix(data = c(runif(n), runif(n) + 1),ncol = 2)))
+vers1 <- replicate(m, sqrt(n) * MMD(gauss.kernel, matrix(data = c(runif(n), runif(n) + 1), ncol = 2)))
 hist(vers1, main = TeX("$\\widehat{MMD}^{2}$ für $P^{X} \\neq P^{Y}$"), xlab = TeX("$\\widehat{MMD}^{2}$"), ylab = "freq", freq = F)
 
 vers2 <- replicate(m, sqrt(n) * MMD(gauss.kernel, matrix(data = c(runif(n), runif(n)),ncol = 2)))
 hist(vers2, main = TeX("$\\widehat{MMD}^{2}$ für $P^{X} = P^{Y}$"), xlab = TeX("$\\widehat{MMD}^{2}$"), ylab = "freq", freq = F)
+
+
+for(j in (1:n)[-10]){
+  print(j)
+  summe <- summe + h(k, z[10,], z[j,])
+}
 
