@@ -26,8 +26,8 @@ plt.xlabel("X")
 plt.savefig("scatter.jpg")
 plt.show()
 
-mcmd_1 = MCMD(X, Xp_same, Z_1, Zp_2, kernel_x_args= dict(sigma = 0.1), kernel_y_args=dict(sigma = 0.1), lamb=0.01, lambp=0.01)
-mcmd_2 = MCMD(X, Xp_diff, Z_1, Zp_3, kernel_x_args= dict(sigma = 0.1), kernel_y_args=dict(sigma = 0.1), lamb=0.01, lambp=0.01)
+mcmd_1 = MCMD(X, Xp_same, Z_1, Zp_2, lamb=0.01, lambp=0.01)
+mcmd_2 = MCMD(X, Xp_diff, Z_1, Zp_3, lamb=0.01, lambp=0.01)
 
 
 xp = np.linspace(-3, 3, 1000)
@@ -39,7 +39,6 @@ for i in range(len(xp)):
 
 plt.plot(xp, ysame)
 plt.plot(xp, ydiff)
-plt.ylim((0, 1))
 plt.legend(["$\widehat{MCMD}^{2}(P^{X|Z},P^{X_same|Z}, H_{\mathcal{X}})$",
-           "$\widehat{MCMD}^{2}(P^{X|Z}, P^{X_diff|Z}, H_{\mathcal{X}})$"])
+            "$\widehat{MCMD}^{2}(P^{X|Z}, P^{X_diff|Z}, H_{\mathcal{X}})$"])
 plt.show()
