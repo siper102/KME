@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import time
 
-start = time.time()
+
+
 # The following function computes the kernel matrix using the Gaussian kernel between vectors x and y, with bandwidth
 # sigma. If y=None, the Gram matrix is computed based on x.
 def kernel_matrix(x, y=None, sigma=None):
@@ -107,8 +107,7 @@ mcmd_same = np.asarray([mcmd(p, K_X, K_X_prime_same, K_X_X_prime_same, Z, Z_prim
                         for p in z_arguments_mcmd])
 mcmd_diff = np.asarray([mcmd(p, K_X, K_X_prime_diff, K_X_X_prime_diff, Z, Z_prime, W_mcmd, W_prime_mcmd, sigma_Z_mcmd)
                         for p in z_arguments_mcmd])
-stop = time.time()
-print(stop - start)
+
 
 x_arguments = np.arange(-3, 3, 0.1)
 zz = np.linspace(-3, 3, 60)
