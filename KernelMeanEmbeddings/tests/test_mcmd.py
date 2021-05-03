@@ -23,8 +23,8 @@ plt.xlabel("X")
 plt.show()
 
 y_plot = np.arange(-3, 3, 0.01)
-mcmd_1 = MCMD(X, Xp_same, Z_1, Zp_2, y_plot, lamb=0.01, lambp=0.01)
-mcmd_2 = MCMD(X, Xp_diff, Z_1, Zp_3, y_plot, lamb=0.01, lambp=0.01)
+mcmd_1 = MCMD(X, Xp_same, Z_1, Zp_2, lamb=0.01, lambp=0.01)
+mcmd_2 = MCMD(X, Xp_diff, Z_1, Zp_3, lamb=0.01, lambp=0.01)
 
 F_1 = np.zeros_like(y_plot)
 F_2= np.zeros_like(y_plot)

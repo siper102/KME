@@ -1,7 +1,9 @@
 import numpy as np
 from framework.conditional import HSCIC
 import matplotlib.pyplot as plt
+import time
 
+start = time.time()
 
 Z  = np.random.normal(size=500)
 X = np.exp(-0.5*Z**2) * np.sin(2*Z) + np.random.normal(size=500) * 0.3
@@ -31,7 +33,7 @@ for i in range(len(xp)):
 plt.plot(xp, y)
 plt.plot(xp, y_2)
 plt.plot(xp, y_3)
-plt.figsave("HSCIC.pdf")
 plt.show()
 
-plt.savefig("HSCIC.pdf")
+stop = time.time()
+print(stop - start)
