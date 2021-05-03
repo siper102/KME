@@ -1,8 +1,9 @@
 from ..kernels import kernel_vec, Kernel_Matrix
 import numpy as np
 from numpy.linalg import inv
+from .Embedd import Embedd
 
-class MCMD:
+class MCMD(Embedd):
 
     def __init__(self, lamb = 0.01, lambp = 0.01, sigma = 0.1):
         self.sigma = sigma
@@ -22,7 +23,6 @@ class MCMD:
     def fit(self, x, xp, y, yp):
         n = len(x)
         m = len(xp)
-
         self.k_y = kernel_vec(y)
         self.K_y = Kernel_Matrix(y, y)
         self.W_y = inv(self.K_y + self.lamb * np.eye(n))
@@ -37,8 +37,4 @@ class MCMD:
         return self.k_y(y).T@self.W_y@self.K_x@self.W_y.T@self.k_y(y) \
                - 2 * self.k_y(y).T@self.W_y @ self.K_xxp @ self.W_yp.T @self.k_yp(y) \
                + self.k_yp(y).T@self.W_yp @self.K_xp @self.W_yp.T @self.k_yp(y)
-
-    def __call__(self, y):
-        y = np.reshape(y, [-1, 1])
-        return np.asarray([self.evaluate(yi) for yi in y])
 
