@@ -36,8 +36,6 @@ def HSCIC(X, Y, Z, lamb = 0.01):
 
     W = inv(K_z + lamb * np.eye(n))
 
-    fir = lambda z: k_z(z).T@W@ (K_x * K_y) @ W.T@ k_z(z)
-    sec = lambda z: k_z(z).T@W@((K_x@W.T@k_z(z)) * (K_y@W.T@k_z(z)))
-    thi = lambda z: (k_z(z).T@W@K_x@W.T@k_z(z)) * (k_z(z).T@W@K_y@W.T@k_z(z))
-
-    return lambda z: fir(z) - 2* sec(z) + thi(z)
+    return lambda z: k_z(z).T@W@ (K_x * K_y) @ W.T@ k_z(z) \
+                - 2*(k_z(z).T@W@((K_x@W.T@k_z(z)) * (K_y@W.T@k_z(z))))\
+                + (k_z(z).T@W@K_x@W.T@k_z(z)) * (k_z(z).T@W@K_y@W.T@k_z(z))
