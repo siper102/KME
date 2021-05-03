@@ -11,5 +11,5 @@ class Embedd:
         pass
 
     def __call__(self, elements):
-        y = np.reshape(y, [-1, 1])
-        return np.asarray([self.evaluate(yi) for yi in y])
+        y = np.reshape(elements, [-1, 1])
+        return np.asarray([self.evaluate(yi)[0, 0] for yi in y])
