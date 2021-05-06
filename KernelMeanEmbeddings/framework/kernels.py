@@ -14,5 +14,5 @@ def Kernel_Matrix(X, Y, sigma = 0.1):
     kernel_input = x_squared + y_squared - 2 * xy_inner
     return np.exp(-0.5 * sigma * kernel_input)
 
-def kernel_vec(X):
-    return lambda y: Kernel_Matrix(X, np.reshape(y, [1, -1]))
+def kernel_vec(X, sigma = 0.1):
+    return lambda y: Kernel_Matrix(X, np.reshape(y, [1, -1]), sigma)

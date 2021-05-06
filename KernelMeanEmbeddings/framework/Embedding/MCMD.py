@@ -19,7 +19,6 @@ class MCMD(Embedd):
         self.K_xxp = None
         self.K_xp = None
 
-
     def fit(self, x, xp, y, yp):
         n = len(x)
         m = len(xp)

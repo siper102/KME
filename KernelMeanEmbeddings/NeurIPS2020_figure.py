@@ -221,6 +221,8 @@ plt.ylabel("MCMD", fontsize=20)
 plt.show()
 im_same = plt.imshow(wit_same, cmap='viridis', interpolation='nearest', vmin=mini, vmax=maxi,
                            extent=[z_arguments_mcmd[0], z_arguments_mcmd[-1], x_arguments[0], x_arguments[-1]])
+
+print(wit_same.shape)
 plt.title("Witness between X and X'_same", fontsize=20)
 plt.show()
 #axes_2[2].set_xlabel("z", fontsize=20)
