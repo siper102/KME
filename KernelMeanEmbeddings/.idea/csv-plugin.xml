@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/tests/test_F.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/tests/test_mcmd.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

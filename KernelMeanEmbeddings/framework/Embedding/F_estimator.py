@@ -15,13 +15,13 @@ class F_estimator:
     def fit(self, x, y):
         n = len(x)
         self.k_x = kernel_vec(x, self.sigma)
-        self.k_y = kernel_vec(y, self.sigma)
+        self.l_y = kernel_vec(y, self.sigma)
         self.K_y = Kernel_Matrix(y, y)
         self.W = inv(self.K_y + self.lamb * np.eye(n))
 
 
     def evaluate(self, y, x):
-        return (self.k_y(y).T @ self.W @ self.k_x(x))[0, 0]
+        return (self.l_y(y).T @ self.W @ self.k_x(x))[0, 0]
 
     def __call__(self, x, y):
         x = np.reshape(x, [-1, 1])
