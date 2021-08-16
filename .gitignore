@@ -7,7 +7,7 @@ bin-release/
 # Other files and folders
 .settings/
 .ipynb_checkpoints/
-
+.idea
 # Executables
 *.swf
 *.air
