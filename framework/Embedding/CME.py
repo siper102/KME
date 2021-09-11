@@ -2,7 +2,7 @@ from ..kernels import kernel_vec, Kernel_Matrix
 from numpy.linalg import inv
 import numpy as np
 
-class F_estimator:
+class CME:
 
     def __init__(self, sigma = 0.1, lamb = 0.01):
         self.sigma = sigma

@@ -18,8 +18,8 @@ Z = normal(loc = mu_bed, scale=Sig_bed, size=500)
 
 plt.scatter(X[:,0], X[:,1])
 plt.scatter(Z, np.ones_like(Z) * y)
-plt.legend(["(X, Y)", "Z = (X|Y=3)"])
-#plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit/Arbeit/6.Experimente/Images/Experiment_F_norm_scatter.pdf")
+plt.legend(["(X, Y)", "Z = (X|Y=4)"])
+plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit/Arbeit/6.Experimente/Images/Experiment_F_norm_scatter.pdf")
 plt.show()
 
 
@@ -28,14 +28,14 @@ kme = KME()
 
 F.fit(X[:,0], X[:,1])
 kme.fit(Z)
-dist = np.sqrt(quad(lambda x: (F(x, 3) - kme(x))**2, -4, 10)[0])
+dist = np.sqrt(quad(lambda x: (F(x, 4) - kme(x))**2, -4, 10)[0])
 
 
 xp = np.arange(-4, 10, 0.01)
 plt.plot(xp, F(xp, 3))
 plt.plot(xp, kme(xp))
-plt.legend(["$\hat{F}_{P^{X|Y},n, \lambda}$", "$\hat{\mu}_{P^{Z}}$"])
-plt.title("$\||\hat{F}_{X|Y,500, 0.01}(3) - \hat{\mu}_{P^{Z}}\||$ =" + f"{round(dist, 3)}")
-plt.xlabel("x")
+plt.legend(["$\hat{F}_{P^{X|Y},n, \lambda}$", "$(\mu_{P^{Z}})_{n}$"])
+plt.title("$\||\hat{F}_{P^{X|Y},n, \lambda} - (\mu_{P^{Z}})_{n}\||$ =" + f"{round(dist, 3)}")
+plt.xlabel("Z")
 plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit/Arbeit/6.Experimente/Images/Experiment_F_2.pdf")
 plt.show()
