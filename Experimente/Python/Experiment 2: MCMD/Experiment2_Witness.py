@@ -1,4 +1,4 @@
-from framework.Embedding.F_estimator import F_estimator
+from framework.Embedding.CME import CME
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,10 +19,10 @@ Y_4 = np.random.normal(size=n)
 Xp_same = np.exp(-1 / 2 * Y_4 ** 2) * np.sin(2 * Y_4) + 0.3 * np.random.normal(size=n)
 
 # Schätzer erstellen
-f_1 = F_estimator()
-f_2 = F_estimator()
-f_3 = F_estimator()
-f_4 = F_estimator()
+f_1 = CME()
+f_2 = CME()
+f_3 = CME()
+f_4 = CME()
 # Schätzer anpassen
 f_1.fit(X_1, Y_1)
 f_2.fit(Xp_diff, Y_2)
@@ -42,18 +42,18 @@ mini = min(np.min(wit_same), np.min(wit_diff))
 
 im_diff = plt.imshow(wit_diff, cmap='viridis', interpolation='nearest',
                      extent=[yp[0], yp[-1], xp[0], xp[-1]], vmin=mini, vmax=maxi,)
-plt.title("X|Y vs. $X_{diff}$|Y")
+plt.title("X|Y vs. $X_{diff}$|Y",fontsize = 15)
 plt.xlabel("y")
 plt.ylabel("x")
 plt.colorbar()
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit/Arbeit/Verkürzt/Neu3/Images/Wit_diff.pdf")
+plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Wit_diff.pdf")
 plt.show()
 
 im_same = plt.imshow(wit_same, cmap='viridis', interpolation='nearest',
                      extent=[yp[0], yp[-1], xp[0], xp[-1]], vmin=mini, vmax=maxi,)
-plt.title("X|Y vs. $X_{same}$|Y")
+plt.title("X|Y vs. $X_{same}$|Y", fontsize = 20)
 plt.xlabel("y")
 plt.ylabel("x")
 plt.colorbar()
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit/Arbeit/Verkürzt/Neu3/Images/Wit_same.pdf")
+plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Wit_same.pdf")
 plt.show()
