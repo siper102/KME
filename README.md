@@ -1,1 +1,1 @@
-# Github Repository zu meiner Bachelorarbeit
+# Github Repository zur Bachelorarbeit "Ein nicht-operatorbasierter Ansatz für das Conditional Kernel Mean Embedding"
