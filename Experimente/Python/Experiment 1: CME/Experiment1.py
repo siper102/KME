@@ -20,7 +20,6 @@ Z = normal(loc = mu_bed, scale=Sig_bed, size=500)
 plt.scatter(X[:,0], X[:,1])
 plt.scatter(Z, np.ones_like(Z) * y)
 plt.legend(["(X, Y)", "Z = (X|Y=3)"])
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Experiment_F_norm_scatter.pdf")
 plt.show()
 
 # Initialisierung der Schätzer mit den default-Werten
@@ -39,5 +38,4 @@ plt.plot(xp, kme(xp))
 plt.legend(["$\hat{F}_{P^{X|Y},n, \lambda}$", "$\hat{\mu}_{P^{Z}}$"], fontsize = 15)
 plt.title("$\||\hat{F}_{X|Y,500, 0.01}(3) - \hat{\mu}_{P^{Z}}\||$ =" + f"{round(dist, 3)}",fontsize = 20)
 plt.xlabel("x")
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Experiment_F_2.pdf")
 plt.show()

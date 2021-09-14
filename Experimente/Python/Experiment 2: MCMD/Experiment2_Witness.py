@@ -46,7 +46,6 @@ plt.title("X|Y vs. $X_{diff}$|Y",fontsize = 15)
 plt.xlabel("y")
 plt.ylabel("x")
 plt.colorbar()
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Wit_diff.pdf")
 plt.show()
 
 im_same = plt.imshow(wit_same, cmap='viridis', interpolation='nearest',
@@ -55,5 +54,4 @@ plt.title("X|Y vs. $X_{same}$|Y", fontsize = 20)
 plt.xlabel("y")
 plt.ylabel("x")
 plt.colorbar()
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Wit_same.pdf")
 plt.show()

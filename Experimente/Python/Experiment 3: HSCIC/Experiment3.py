@@ -22,7 +22,6 @@ plt.scatter(Z, Y_noise)
 plt.scatter(Z_2, Y_dep)
 plt.scatter(Z_3, Yp_dep)
 plt.legend(["X", "$Y_{noise}$", "$Y^{\prime}_{dep}$", "$Y_{dep}$"], fontsize = 10)
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Scatter_HSCIC_addi.pdf")
 plt.show()
 
 # Initialisieren der Schätzer
@@ -40,5 +39,4 @@ plt.plot(xp, hscic_2(xp))
 plt.plot(xp, hscic_3(xp))
 plt.legend(["HSCIC(X, $Y_{noise}$, Z)", "HSCIC(X, $Y_{dep}$, Z)", "$HSCIC(X, Y^{\prime}_{dep}, Z)$"], fontsize = 10)
 plt.xlabel("Z")
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Experiment_HSCIC_addi.pdf")
 plt.show()

@@ -22,7 +22,6 @@ plt.scatter(Y_3, X_diff, c ="k", marker ="*")
 plt.legend(["X", "$X_{same}$", "$X_{diff}$"])
 plt.xlabel("Y")
 plt.xlabel("X")
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Scatter_MCMD.pdf")
 plt.show()
 
 # Schätzer erstellen
@@ -42,5 +41,4 @@ plt.legend(["$\widehat{MCMD}^{2}(P^{X|Y},P^{X_{same}|Y}, H_{\mathcal{X}})$",
             "$\widehat{MCMD}^{2}(P^{X|Y}, P^{X_{diff}|Y}, H_{\mathcal{X}})$"], loc = "upper center",
            fontsize = 15)
 plt.xlabel("Z")
-plt.savefig("/Users/simonperschel/Dropbox/Bachelorarbeit Simon/Arbeit/Abgabe/Images/Experiment_MCMD.pdf")
 plt.show()
