@@ -2,7 +2,7 @@ import numpy as np
 from .kernels import kernel_vec, Kernel_Matrix
 from numpy.linalg import inv
 
-
+# Implementierungen aus dem Kapitel über das CME
 def MCMD(x, xp, y, yp, lamb = 0.01 , lambp = 0.01 ):
 
     n = len(x)

@@ -6,6 +6,8 @@ def gauss_kernel(sigma = 0.1):
 
 
 def Kernel_Matrix(X, Y, sigma = 0.1):
+    # Die Matrix K von der Form [K]_{ij} = k(x_{i}, x_{j}) für einen Kernel k und
+    # Daten x_{i}, i=1,...,n
     X_new = np.reshape(X, [-1, 1])
     Y_new = np.reshape(Y, [-1, 1])
     x_squared = np.sum(np.power(X_new, 2), axis=-1, keepdims=True)
@@ -15,4 +17,5 @@ def Kernel_Matrix(X, Y, sigma = 0.1):
     return np.exp(-0.5 * sigma * kernel_input)
 
 def kernel_vec(X, sigma = 0.1):
+    # Die Abbildung x -> (k(x_{1}, x), ..., k(x_{n}, x))
     return lambda y: Kernel_Matrix(X, np.reshape(y, [1, -1]), sigma)
